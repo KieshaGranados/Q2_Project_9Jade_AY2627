@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q1 Project</title>
+
+        <style>
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+
+            html { scroll-behavior: smooth; }
+
+            body { background-color: #f2f2f0; line-height: 1.0; }
+
+            header { background-color: #d95d9d; padding: 10px 50px; display: flex; justify-content: space-between;
+            align-items: center; position: sticky; top: 0; z-index: 1000; }
+
+            .brand-container { display: flex; align-items: center; }
+
+            .logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+            nav a { color: #f7f7d2; text-decoration: none; font-weight: 550; margin-left: 25px; font-size: 1.2rem; transition: opacity 0.2s ease; }
+
+            nav a:hover { opacity: 0.9; color: #e1e47a; }
+
+            nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+            .nav-links { display: flex; list-style: none; }
+
+
+
+            .hero { background-color: #d5faf5; padding: 60px 20px; text-align: center; }
+
+            .avatar-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 6px solid #e1e47a; }
+
+            .hero h1 { font-size: 3.0rem; color: #393437; font-weight: 700; }
+
+            .hero h1 span { color: #3b6c65; }
+
+            .hero p { font-size: 1.3rem; color: #393437; margin-top: 10px; font-style: italic; }
+
+
+
+            main { max-width: 900px; margin: 0 auto; padding: 5px 20px; }
+
+            .section-pill {
+                background: linear-gradient(135deg, #dea5c2 0%, #d95d9d 100%); color: #f7f7d2; font-weight: 700;font-size: 1.7rem; text-align: center; padding: 12px; border-radius: 15px; margin: 50px auto 30px auto;
+                width: 100%; max-width: 1000px; box-shadow: 0 4px 10px rgba(14, 25, 32, 0.15); }
+
+            section {
+                scroll-margin-top: 80px; }
+
+            #about p {
+                text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.05rem; color: #393437; }
+
+            .work-card {
+                display: flex; flex-direction: row; align-items: center; gap: 30px; margin-bottom: 30px; background-color: #ffffff; padding: 25px; border-radius: 15px; border: 3px solid #a1a69f; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); }
+
+            .preview-box { flex: 1; text-align: center; }
+
+            .preview-img { width: 100%; max-width: 380px; height: auto; border: 5px dashed #e1e47a; border-radius: 12px;display: block; margin: 0 auto; }
+
+            .preview-caption { margin-top: 10px; font-size: 0.95rem; color: #393437; font-weight: 600; }
+
+            .work-details {
+                flex: 1; }
+
+            .work-details ul {
+                list-style: none; padding: 0; margin-bottom: 16px; }
+
+            .work-details li {
+                font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; color: #393437; }
+
+            .work-details li::before {
+                content: "✓"; margin-right: 8px; font-weight: bold; color: #e1e47a; }
+
+            .form-card {
+                background-color: #ffffff; border-radius: 16px; padding: 35px 40px; max-width: 1000px; margin: 0 auto; border: 3px solid #a1a69f; box-shadow: 0 8px 24px rgba(14, 25, 32, 0.08); }
+
+            .form-card label {
+                display: block; font-weight: 700; margin-top: 15px; margin-bottom: 6px; font-size: 1rem; color: #393437; }
+
+            .form-card input[type="text"],
+            .form-card input[type="email"],
+            .form-card select,
+            .form-card textarea {
+                width: 100%; padding: 10px 14px; border: 1px solid #a1a69f; border-radius: 6px; font-family: inherit; font-size: 0.95rem; outline: none; background-color: #f2f2f0; color: #393437; }
+
+            .form-card input[type="text"]:focus,
+            .form-card input[type="email"]:focus,
+            .form-card select:focus,
+            .form-card textarea:focus {
+                border-color: #3b6c65; background-color: #ffffff; }
+
+            .inline-group { display: flex; gap: 12px; align-items: center; font-weight: normal; margin-top: 4px; }
+
+
+            .inline-group label {
+                font-weight: normal; margin: 0; display: flex; align-items: center; gap: 4px; font-size: 0.95rem;
+                color: #393437; }
+
+            .submit-btn {
+                width: 100%; background-color: #d95d9d; color: #f7f7d2; border: none; padding: 12px; border-radius: 6px; font-size: 1rem; font-weight: 600; margin-top: 25px; cursor: pointer; transition: background-color 0.2s ease; }
+
+            .submit-btn:hover {
+                background-color: #ad477c; }
+
+
+
+            footer {
+                background-color: #d95d9d; color: #f7f7d2; text-align: center; padding: 20px; margin-top: 60px; font-size: 0.95rem; }
+
+            @media (max-width: 650px) {
+                .work-card,
+                .work-card:nth-child(even) { flex-direction: column; }
+
+                header { padding: 12px 20px; } }
+                
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo-badge">
+                    <img src="https://i.pinimg.com/736x/ee/60/d5/ee60d5981b14378f9223d655088f9d83.jpg" alt="ICT Logo" class="logo-img">
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#works">My Works</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="hero">
+            <img src="https://i.pinimg.com/736x/71/8c/b1/718cb1cb0bbd2f6e8464c931d0a316a4.jpg" alt="pfp" class="avatar-img">
+
+            <h1>Hello, I'm <span class="highlight-name">Kiesha Granados</span></h1>
+            <p class="subtitle">Aspiring Web Developer</p>
+        </section>
+
+
+        <main class="main-content">
+            <section id="about">
+                <div class="section-pill">About me</div>
+
+                <p class="about-text">
+                    Hi! I'm Kiesha. I am an OBMC student currently studying about HTML and CSS in my ICT class. 
+                </p>
+            </section>
+
+
+            <section id="works">
+                <div class="section-pill">My Works</div>
+
+                <div class="work-card">
+                    <div class="preview-box">
+
+                        <img
+                            src="sw1.png" alt="My Favortie Spotify Artist Project" class="preview-img">
+
+                        <p class="preview-caption">
+                            My Favorite Spotify Artist
+                        </p>
+                    </div>
+
+                    <div class="work-details">
+                        <ul>
+                            <li>HTML & CSS Projects</li>
+                            <li>Spotify Artist</li>
+                            <li>List, Links, and Images</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+
+                <div class="work-card">
+                    <div class="preview-box">
+
+                    <img
+                            src="drill 2.png" alt="My Rate a Movie Form Project" class="preview-img">
+
+                        <p class="preview-caption">
+                            My Rate a Movie Form
+                        </p>
+                    </div>
+
+                    <div class="work-details">
+                        <ul>
+                            <li>HTML & CSS Projects</li>
+                            <li>HTML Forms</li>
+                            <li>Movie Recommendations</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="section-pill">Contact Me</div>
+
+                <div class="form-card">
+
+                    <form
+                        action="#" method="post" onsubmit="event.preventDefault(); this.reset();">
+
+                        <div class="form-group">
+                            <label for="user-name" class="field-label">
+                                Your Name:
+                            </label>
+
+                            <input
+                                type="text" id="user-name"name="userName" class="text-input">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="user-email" class="field-label">
+                                Your Email:
+                            </label>
+
+
+                            <input
+                                type="email" id="user-email" name="userEmail" class="text-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="field-label">
+                                How did you find me?
+                            </label>
+
+                            <div class="inline-group">
+
+                                <label>
+                                    <input
+                                        type="radio" name="source" value="Facebook">
+                                    <span>Facebook</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio" name="source" value="Google">
+                                    <span>Google</span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="source" value="Friends">
+                                    <span>Friends</span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="field-label">
+                                Interested In:
+                            </label>
+
+                            <div class="inline-group">
+
+                                <label>
+                                    <input
+                                        type="checkbox" name="interest" value="Web Design">
+                                    <span>Web Design</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox" name="interest" value="Graphic Design">
+                                    <span>Graphic Design</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox" name="interest" value="Robotics">
+                                    <span>Robotics</span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <label for="rating">
+                            <span>Rate my Portfolio</span>
+                        </label>
+
+                        <select id="rating" name="rating">
+                            <option value="">-- Select Rating --</option>
+                            <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (Good)</option>
+                            <option value="3">⭐⭐⭐ (Average)</option>
+                        </select>
+
+                        <label for="feedback">
+                            <span>Any Feedback?</span>
+                        </label>
+
+                        <textarea
+                            id="feedback" name="feedback" rows="4" placeholder="Write your feedback here...">
+                        </textarea>
+
+                        <button type="submit" class="submit-btn">
+                            Submit
+                        </button>
+
+                    </form>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+           2026 Kiesha Cassandra M Granados. All rights reserved.
+        </footer>
+
+    </body>
+</html>
